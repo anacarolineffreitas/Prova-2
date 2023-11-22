@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+      .container{
+        border: var(--bs-border-width) solid var(--bs-border-color);
+        border-radius: 20px;
+        margin-top: 25px;
+      }
+      .row-one, 
+      .row-two,
+      .row-three{
+        display: flex;
+        gap: 50px;
+        align-items: end;
+      }
+      .confirmar{
+        border-radius: 5px;
+        background: rgb(121, 245, 121);
+        border-color: rgb(121, 245, 121);
+        color: #1E1E1E;
+      }
+
+      .cabecalho img{
+        width: 200px;
+        height: 160px;
+      }
+
+      .cabecalho{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+
+  </head>
+  <body onload="consultaMensagens()">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="loja.html">Love Dog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link" href="mensagem.html">Cadastro</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="like.html">Like</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="dlike.html">Don't like</a>
+                      </li>
+                </ul>
+              </div>
+        </div>
+    </nav>
+    <div class="cabecalho">
+      <img src="imagens/001.jpg" alt="">
+      <img src="imagens/002.jpg" alt="">
+      <img src="imagens/003.jpg" alt="">
+      <img src="imagens/004.jpg" alt="">
+      <img src="imagens/005.jpg" alt="">
+    </div>
+    <div class="container">
+      <form>
+        <input id="id" hidden/>
+        <div class="mb-3 w-50 mt-4">
+          <label for="titulo" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="titulo">
+        </div>
+        <div class="mb-3 w-50 mt-4">
+          <label for="conteudo" class="form-label">Raça</label>
+          <input type="text" class="form-control" id="conteudo">
+        </div>
+        <div class="mb-3 w-50">
+          <label for="publicado" class="form-label">Pedrigree</label>
+          <input type="checkbox" id="publicado"> 
+        </div>
+        <div class="mb-3 w-50">
+          <label for="qtdeLikes" class="form-label">Quantidade Likes</label>
+          <input type="number" class="form-control" id="qtdeLikes">
+        </div>
+        <button type="button" class="btn btn-primary confirmar" onclick="cadastrarMensagem()">Confirmar</button>
+      </form>
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Raça</th>
+            <th scope="col">Pedrigree</th>
+            <th scope="col">Quantidade Likes</th>
+            <th scope="col">Remoção</th>
+            <th scope="col">Atualização</th>
+          </tr>
+        </thead>
+        <tbody id="linhasTabela">
+        </tbody>
+      </table>
+    </div>
+    <script src="mensagem.js">
+    </script>
+  </body>
+</html>
